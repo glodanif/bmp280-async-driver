@@ -1,0 +1,21 @@
+[workspace]
+members = [
+    "bmp280-driver",
+    "nrf52-example",
+]
+# Root-level `cargo build`/`cargo test` only touch the host-buildable driver.
+# The nRF example is built explicitly (it targets thumbv7em, not the host).
+default-members = ["bmp280-driver"]
+resolver = "3"
+
+[profile.dev]
+opt-level = "s"
+
+[profile.release]
+codegen-units = 1
+debug = 2
+debug-assertions = false
+incremental = false
+lto = 'fat'
+opt-level = 's'
+overflow-checks = false

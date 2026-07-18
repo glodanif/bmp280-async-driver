@@ -1,0 +1,21 @@
+# Rust build artifacts (any crate in the workspace, not just the root)
+target/
+**/*.rs.bk
+*.pdb
+
+# Cargo.lock is committed on purpose: this workspace produces a binary (nrf52-example),
+# so a reproducible dependency graph matters for the firmware build.
+
+# RustRover / IntelliJ — project files are derived from Cargo.toml, not tracked
+.idea/
+*.iws
+
+# Editors
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,19 @@
+[package]
+name = "bmp280-driver"
+version = "0.1.0"
+edition = "2024"
+description = "A no_std, embedded-hal-async driver for the Bosch BMP280 pressure and temperature sensor"
+license = "MIT"
+repository = "https://github.com/glodanif/bmp280-async-driver"
+keywords = ["bmp280", "embedded-hal-async", "sensor", "no-std", "driver"]
+categories = ["embedded", "hardware-support", "no-std"]
+
+[dependencies]
+embedded-hal-async = "1.0.0"
+defmt = { version = "1.1.1", optional = true }
+
+[dev-dependencies]
+embedded-hal-mock = { version = "0.11.1", features = ["eh1", "embedded-hal-async"] }
+
+[features]
+defmt = ["dep:defmt"]
